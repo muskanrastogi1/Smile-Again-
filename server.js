@@ -39,7 +39,7 @@ app.use(middleware.session);
 
 //protected routes (with JSON web token)
 const protectedRoutes = require("./routes/protected.js");
-app.use("/secure", protectedRoutes);
+app.use("/auth/secure", protectedRoutes);
 
 // script to run the server
 app.listen(port, () => {
