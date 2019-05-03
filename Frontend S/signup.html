@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style type="text/css">
+
+    body {
+        background-image: url(Back.jpeg);
+        background-size: cover;
+    }
+
+	.main {
+            text-align : center;
+            height: 350px;
+            width: 350px;
+            margin : auto auto;
+            background-color: white;
+            top: 100px;
+            padding : 20px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11);
+            margin-left: 170px;
+        }
+        .username {
+            margin : 60px 0 40px 0;
+        }
+        .password {
+            margin : 40px 0 80px 0;
+        }
+        button {
+            height: 50px;
+            width: 150px;
+            border-radius: 30px;
+            border: none;
+            box-shadow: 0 15px 30px 0 rgba(189,89,215,0.25);
+            text-align: center;
+            background-color: #bd59d7;
+            color : white;
+        }
+        input {
+            height: 50px;
+            width: 250px;
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 5px 30px 0 rgba(0,0,0,0.11);
+            text-align: center;
+            font-size: 15px;
+            color : #4c2a52;
+        }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active  {
+            -webkit-box-shadow: 0 0 0 30px white inset;
+        }
+        input:focus,
+        select:focus,
+        textarea:focus,
+        button:focus {
+            outline: none;
+        }
+        button, button:focus {
+            outline: none;
+            border: 0;
+            cursor: pointer;
+        }
+        ::placeholder{
+            text-align: center;
+            font-weight: bold;
+            font-size: 15px;
+            color : #4c2a52;
+            font-family: 'Muli', sans-serif;
+        }
+        h2 {
+            color: #4c2a52;
+            margin: 0px;
+        }
+        .box {
+            margin-top: -30px;
+        }
+        .display {
+            margin-top: -40px;
+        }
+       .error {
+          border: 1px solid red;
+          border-radius: 10px;
+          padding-bottom: 10px;
+          margin-top: 10px;
+          display: none;
+        }
+        .err-content {
+          text-align: left;
+          padding: 8px;
+          font-size: 1.2em;
+        }
+        img {
+          position: absolute;
+          width: 54px;
+          height: 34px;
+          margin-top: 9px;
+          margin-left: -55px;
+          visibility: hidden;
+        }
+        #img2 {
+            margin-left: -50px;
+            width: 48px;
+            height: 34px;
+            margin-top: 1px;
+            margin-top: 10px;
+        }
+        .switcher {
+        	width: 200px;
+        	height: 50px;
+        	text-align: center;
+        }
+        .main-switcher {
+        	text-align : center;
+            width: 210px;
+            margin : auto auto;
+            background-color: white;
+            top: 10vh;
+            position: relative;
+            padding : 0px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11);
+        }
+        .sign-up, .login {
+        	width: 100px;
+        	height:50px;
+        	background-color: #BD59D7;
+        	color: #fff;
+        	border-radius: 20px;
+        	text-align: center;
+        	padding: 13px;
+        	font-size: 1.1em;
+        	display: inline-block;
+        	margin-left: 0px;
+        	text-align: center;
+        }
+        .login {
+        	background-color: #fff;
+        	color: #BD59D7;
+        }
+        #sec-main {
+        	height: 500px;
+
+        }
+        .second {
+        	margin-top: 20px;
+        }
+        #signin {
+        	margin-top: 20px;
+        }
+        #main {
+        	display: none;
+        	width: 350px;
+        	height: 350px;
+        }
+    @media only screen and (max-width: 768px) {
+    
+    body {
+        background-image: url(Back.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-clip: content-box;
+    }
+
+    .main {
+        margin-left: auto;
+    }
+
+    .head {
+        text-align: center;
+    }
+
+}
+
+		
+	</style>
+</head>
+<body>
+
+<div class="container-fluid head">
+	<div class="row">
+		<div class="col-md-3"></div>
+    <div id="main" class="main col-md-6">
+        <h2>Login</h2>
+
+        <div class="error">
+            <div class="err-content">
+                <img src="../static/images/warning.svg"> <span>{{error}}</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <form action="{{url_for('userLogin')}}" method="post">
+                <div class="username">
+                    <input id="username" type="text" name="username" placeholder="username" >
+                </div>
+                <div class="password">
+                    <input id="password" type="password" name="password" placeholder="password">
+                    <img id="img1" src="../static/images/view.svg">
+                    <img id="img2" src="../static/images/hide.svg">
+                </div>
+                <div class="display">
+                    <button type="submit">LOGIN</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+	</div>
+
+	<div class="row">
+    <div class="col-md-3"></div>
+        <div id="sec-main" class="main col-md-6">
+        	<h2>Sign Up</h2>
+
+
+          <div class="error">
+            <div class="err-content">
+              <img src="../static/images/warning.svg"> <span id="err">{{error}}</span>
+            </div>
+          </div>
+
+        <form action="{{url_for('generate')}}" method="POST" oninvalid="false">
+            
+            <div class="second">
+                <input type="text" name="name" placeholder="Name" >
+            </div>
+
+            <div class="second">
+                <input  name="aadhar" placeholder="Aadhar Card Number">
+            </div>
+
+            <div class="second">
+                <input id="email" type="email" name="email" placeholder="Email">
+            </div>
+
+            <div class="second">
+                <input  name="username" placeholder="User Name">
+            </div>
+
+            <div class="second">
+                <input id="password" type="password" name="password" placeholder="Password" >
+            </div>
+
+            <div>
+                <button id="signin" type="submit">Sign Up</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+</div>
+
+
+    <script type="text/javascript">
+
+    var error = $("span").html();
+    var error = '{{error}}'
+      if (error.length>10) {
+        $(".error").show();
+        $(".main").css('height','55vh');
+      }
+
+    var count =1;
+    if (count==1) {
+        $("#img1").css('visibility','visible');
+    }
+
+    $("img").click(function(){
+        count+=1;
+        if(count%2!=0){
+        $("#password").attr('type','password');
+        $("#img2").css('visibility','hidden');
+        $("#img1").css('visibility','visible');
+        console.log(count)
+        }
+        else {
+        $('#password').attr('type','text');
+        $("#img1").css('visibility','hidden');
+        $("#img2").css('visibility','visible');
+        }
+    })
+
+    </script>
+
+</body>
+</html>
