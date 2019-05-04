@@ -8,7 +8,6 @@ require("dotenv").config();
 
 // connecting to the database
 require("./model/connect.js")
-const middleware = require("./model/middleware.js");
 
 // initialisation 
 const router = express.Router()
@@ -35,6 +34,7 @@ app.use("/auth", authRoutes)
 
 
 //protected routes 
+const middleware = require("./model/middleware.js");
 app.use(middleware.session);
 
 //protected routes (with JSON web token)
