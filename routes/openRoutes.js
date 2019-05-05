@@ -21,6 +21,10 @@ router.get("/login", (request, response) => {
     response.send("This is the login route")
 })
 
+router.get("/admin/login", (request, response) => {
+    response.send("This is the admin login")
+})
+
 router.get("/logout", (request, response) => {
     response.clearCookie("sessionJWT");
     response.send("You have been successfully logged out");
