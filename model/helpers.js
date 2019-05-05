@@ -1,4 +1,6 @@
 const bcrypt = require("bcrypt")
+const uidGenerator = require("uid-generator");
+const uidgen = new uidGenerator();
 
 module.exports.hashAndReturn = (password) => {
     let hash = bcrypt.hashSync(password, Number(process.env.SALT));
@@ -20,3 +22,5 @@ module.exports.passwordAuth = (dbPassword, inputPassword) => {
     }
 }
 
+
+module.exports.token = uidgen.generateSync();
