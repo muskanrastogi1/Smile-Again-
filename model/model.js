@@ -4,24 +4,28 @@ const preUserProfile = new mongoose.Schema({
     FIRSTNAME : {
         type : String,
         required : true,
-        lowercase : true
+        lowercase : true,
+        trim : true
     },
     LASTNAME : {
         type : String,
         required : true,
-        lowercase : true
+        lowercase : true,
+        trim : true
     },
     EMAIL : {
         type : String,
         required : true,
         lowercase : true,
-        unique : true
+        unique : true,
+        trim : true
     },
     USERNAME : {
         type : String,
         required : true,
         lowercase : true,
-        unique : true
+        unique : true,
+        trim : true
     },
     PASSWORD : {
         type : String,
@@ -38,24 +42,28 @@ const userProfile = new mongoose.Schema({
     FIRSTNAME : {
         type : String,
         required : true,
-        lowercase : true
+        lowercase : true,
+        trim : true
     },
     LASTNAME : {
         type : String,
         required : true,
-        lowercase : true
+        lowercase : true,
+        trim : true
     },
     EMAIL : {
         type : String,
         required : true,
         lowercase : true,
-        unique : true
+        unique : true,
+        trim : true
     },
     USERNAME : {
         type : String,
         required : true,
         lowercase : true,
-        unique : true
+        unique : true,
+        trim : true
     },
     PASSWORD : {
         type : String,
