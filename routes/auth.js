@@ -55,7 +55,7 @@ router.post("/signup", (request, response) => {
 router.post("/login",  (request, response) => {
     
     userProfile.findOne({
-        USERNAME : request.body.username
+        USERNAME : request.body.username.trim()
     }, (err, data) => {
         if (err) {
             console.log("There was error fetching the details", err)
@@ -107,7 +107,7 @@ router.post("/signup/submit/q*", parser.single("profilePicture"), (request, resp
             profile.save((err, data) => {
                 if (err) {
                     console.log("There was some error registering you after uploading image", err);
-                    response.send("There was some error registering you after uploading image");
+                    response.send("The user seems to be already registered with us, try using somw other email id or username ");
                 }
                 else {
                     preUserProfile
