@@ -11,3 +11,5 @@ MONGO_URI= <br/>
 SALT= <br/>
 SECRET= <br/>
 PLACES_API= <br/>
+EMAIL= <br/>
+PASSCODE= <br/>
