@@ -128,6 +128,10 @@ const admin = mongoose.Schema({
     PASSWORD : {
         type : String,
         required : true
+    },
+    ID : {
+        type : Number,
+        required : true
     }
 })
 
