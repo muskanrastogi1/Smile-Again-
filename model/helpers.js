@@ -22,5 +22,4 @@ module.exports.passwordAuth = (dbPassword, inputPassword) => {
     }
 }
 
-
 module.exports.token = uidgen.generateSync();

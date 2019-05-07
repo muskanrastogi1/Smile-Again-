@@ -110,7 +110,7 @@ router.post("/admin/login", (request, response) => {
             const payload = { "username": request.body.username };
             let token = jwt.sign(payload, process.env.SECRET);
             response.cookie('sessionJWT', token, { httpOnly: true });
-            // render admin page with name 
+            // render admin page with name (data[0].name)
             response.send("You are successfully logged in ")
         } else {
             response.send("The credentials mentioned by you were incorrect")

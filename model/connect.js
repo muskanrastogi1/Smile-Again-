@@ -8,3 +8,4 @@ mongoose.connection.once("open", () => {
 }).on("error", (error) => {
     console.log("There was some error connecting to the database", error)
 })
+ 
